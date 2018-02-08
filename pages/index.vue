@@ -23,13 +23,16 @@
 </template>
 
 <script>
-import AppLogo from '~/components/AppLogo.vue'
+import AppLogo from '../components/AppLogo.vue';
 
 export default {
+  head: {
+    title: 'nuxt尝试',
+  },
   components: {
-    AppLogo
-  }
-}
+    AppLogo,
+  },
+};
 </script>
 
 <style>
@@ -42,7 +45,8 @@ export default {
 }
 
 .title {
-  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
+  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
   display: block;
   font-weight: 300;
   font-size: 100px;

@@ -1,12 +1,33 @@
 <template>
   <div>
+    <NavBar/>
     <nuxt/>
   </div>
 </template>
 
+<script>
+import NavBar from '../components/NavBar.vue';
+
+export default {
+  components: {
+    NavBar,
+  },
+  head: {
+    link: [
+      { rel: 'stylesheet', href: 'https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css' },
+    ],
+    script: [
+      { src: 'https://cdn.bootcss.com/jquery/3.3.1/jquery.slim.min.js' },
+      { src: 'https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js' },
+    ],
+  },
+};
+</script>
+
 <style>
 html {
-  font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
+    sans-serif;
   font-size: 16px;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
@@ -16,7 +37,9 @@ html {
   box-sizing: border-box;
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: border-box;
   margin: 0;
 }

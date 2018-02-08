@@ -3,15 +3,16 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: 'nuxt1',
+    titleTemplate: '%s',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Nuxt.js project' }
+      { hid: 'description', name: 'description', content: 'Nuxt.js project' },
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    ]
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'stylesheet', href: 'https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css' },
+    ],
   },
   /*
   ** Customize the progress bar color
@@ -24,15 +25,24 @@ module.exports = {
     /*
     ** Run ESLint on save
     */
-    extend (config, { isDev, isClient }) {
+    extend(config, { isDev, isClient }) {
       if (isDev && isClient) {
         config.module.rules.push({
           enforce: 'pre',
           test: /\.(js|vue)$/,
           loader: 'eslint-loader',
-          exclude: /(node_modules)/
-        })
+          exclude: /(node_modules)/,
+        });
       }
-    }
-  }
-}
+    },
+  },
+  generate: {
+    routes(callback) {
+      const posts = require('./posts.json');
+      const routes = posts.map(post => `/bulma/post/${post.id}`);
+      const serialNumbers = '15620001781,15620009233'.split(',');
+      const routes2 = serialNumbers.map(n => `/bill/${n}`);
+      callback(null, [...routes, ...routes2]);
+    },
+  },
+};

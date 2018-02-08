@@ -1,0 +1,11 @@
+// 将设置放入此文件中以覆盖默认值和用户设置。
+{
+  "prettier.disableLanguages": [
+  ],
+  "prettier.eslintIntegration": true,
+  "vetur.format.defaultFormatter.html": "js-beautify-html",
+  "eslint.autoFixOnSave": true,
+  "prettier.printWidth": 120,
+  "prettier.singleQuote": true,
+  "prettier.stylelintIntegration": true,
+}
